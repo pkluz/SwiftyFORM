@@ -143,7 +143,8 @@ public class TextViewCell: UITableViewCell {
 
 		var layoutMargins = self.layoutMargins
 		layoutMargins.top = 0
-		layoutMargins.bottom = 0
+        layoutMargins.bottom = 0
+        layoutMargins.left = (imageView?.image?.size.width ?? 0) * 2
 		veryTallCell = UIEdgeInsetsInsetRect(veryTallCell, layoutMargins)
 		
 		var (slice, remainder) = veryTallCell.divided(atDistance: 10, from: .minYEdge)
