@@ -180,7 +180,7 @@ public class TextFieldFormItemCell: UITableViewCell {
 		var layoutMargins = self.layoutMargins
 		layoutMargins.top = 0
         layoutMargins.bottom = 0
-        layoutMargins.left = (imageView?.image?.size.width ?? layoutMargins.left) * 2
+        layoutMargins.left = imageView?.image == nil ? layoutMargins.left : (imageView?.image?.size.width ?? 0) * 2
 		let area = UIEdgeInsetsInsetRect(veryTallCell, layoutMargins)
 		
 		let (topRect, _) = area.divided(atDistance: 44, from: .minYEdge)
