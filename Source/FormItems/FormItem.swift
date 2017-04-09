@@ -60,4 +60,6 @@ open class FormItem: NSObject {
 		self.styleClass = styleClass
 		return self
 	}
+    
+    public var customizeCell: (UITableViewCell) -> Void = { _ in }
 }

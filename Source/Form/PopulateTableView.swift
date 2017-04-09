@@ -95,7 +95,7 @@ class PopulateTableView: FormItemVisitor {
 		var model = AttributedTextCellModel()
 		model.titleAttributedText = object.title
 		model.valueAttributedText = object.value
-		let cell = AttributedTextCell(model: model)
+        let cell = AttributedTextCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -109,7 +109,8 @@ class PopulateTableView: FormItemVisitor {
 				c.model = m
 				c.loadWithModel(m)
 			}
-		}
+        }
+        object.customizeCell(cell)
 	}
 
 	
@@ -119,7 +120,8 @@ class PopulateTableView: FormItemVisitor {
 		var model = ButtonCellModel()
 		model.title = object.title
 		model.action = object.action
-		let cell = ButtonCell(model: model)
+        let cell = ButtonCell(model: model)
+        object.customizeCell(cell)
 		cells.append(cell)
 		lastItemType = .item
 	}
@@ -132,8 +134,9 @@ class PopulateTableView: FormItemVisitor {
 			viewController: model.viewController
 		)
 		do {
-			let cell = try object.createCell(context)
-			cells.append(cell)
+            let cell = try object.createCell(context)
+            cells.append(cell)
+            object.customizeCell(cell)
 			lastItemType = .item
 		} catch {
 			print("ERROR: Could not create cell for custom form item: \(error)")
@@ -141,9 +144,10 @@ class PopulateTableView: FormItemVisitor {
 			var model = StaticTextCellModel()
 			model.title = "CustomFormItem"
 			model.value = "Exception"
-			let cell = StaticTextCell(model: model)
+            let cell = StaticTextCell(model: model)
 			cells.append(cell)
-			lastItemType = .item
+            lastItemType = .item
+            object.customizeCell(cell)
 		}
 	}
 	
@@ -169,9 +173,9 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 		
-		let cell = DatePickerToggleCell(model: model)
+        let cell = DatePickerToggleCell(model: model)
 		let cellExpanded = DatePickerExpandedCell()
-		
+        
 		cells.append(cell)
 		switch object.behavior {
 		case .collapsed:
@@ -196,7 +200,9 @@ class PopulateTableView: FormItemVisitor {
 		model.valueDidChange = { (date: Date) in
 			SwiftyFormLog("value did change \(date)")
 			weakObject?.valueDidChange(date)
-		}
+        }
+        object.customizeCell(cell)
+        object.customizeCell(cellExpanded)
 	}
 	
 	func mapDatePickerMode(_ mode: DatePickerFormItemMode) -> UIDatePickerMode {
@@ -234,7 +240,7 @@ class PopulateTableView: FormItemVisitor {
 		let cell = OptionViewControllerCell(
 			parentViewController: self.model.viewController,
 			model: model
-		)
+        )
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -242,7 +248,8 @@ class PopulateTableView: FormItemVisitor {
 		object.syncCellWithValue = { (selected: OptionRowModel?) in
 			SwiftyFormLog("propagate from model to cell. option: \(String(describing: selected?.title))")
 			weakCell?.setSelectedOptionRowWithoutPropagation(selected)
-		}
+        }
+        object.customizeCell(cell)
 	}
 	
 	
@@ -257,8 +264,9 @@ class PopulateTableView: FormItemVisitor {
 					x.form_willSelectOption(option: object)
 				}
 			}
-		}
-		cells.append(cell)
+        }
+        cells.append(cell)
+        object.customizeCell(cell)
 		lastItemType = .item
 	}
 	
@@ -285,8 +293,8 @@ class PopulateTableView: FormItemVisitor {
 			model.selectionStyle = .none
 		}
 		
-		let cell = PrecisionSliderToggleCell(model: model)
-		let cellExpanded = PrecisionSliderExpandedCell()
+        let cell = PrecisionSliderToggleCell(model: model)
+        let cellExpanded = PrecisionSliderExpandedCell()
 
 		cells.append(cell)
 		switch object.behavior {
@@ -321,7 +329,9 @@ class PopulateTableView: FormItemVisitor {
 			}
 			weakCell?.reloadValueLabel()
 			weakCellExpanded?.setValueWithoutSync(value)
-		}
+        }
+        object.customizeCell(cell)
+        object.customizeCell(cellExpanded)
 	}
 	
 	
@@ -429,7 +439,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 		
-		let cell = SegmentedControlCell(model: model)
+        let cell = SegmentedControlCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -438,7 +448,8 @@ class PopulateTableView: FormItemVisitor {
 			SwiftyFormLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value)
 			return
-		}
+        }
+        object.customizeCell(cell)
 	}
 	
 	
@@ -458,7 +469,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 		
-		let cell = SliderCell(model: model)
+        let cell = SliderCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -467,7 +478,8 @@ class PopulateTableView: FormItemVisitor {
 			SwiftyFormLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value, animated: animated)
 			return
-		}
+        }
+        object.customizeCell(cell)
 	}
 	
 	
@@ -477,7 +489,7 @@ class PopulateTableView: FormItemVisitor {
 		var model = StaticTextCellModel()
 		model.title = object.title
 		model.value = object.value
-		let cell = StaticTextCell(model: model)
+        let cell = StaticTextCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -491,7 +503,8 @@ class PopulateTableView: FormItemVisitor {
 				c.model = m
 				c.loadWithModel(m)
 			}
-		}
+        }
+        object.customizeCell(cell)
 	}
 	
 	
@@ -509,7 +522,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 		
-		let cell = StepperCell(model: model)
+        let cell = StepperCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -522,7 +535,8 @@ class PopulateTableView: FormItemVisitor {
 			SwiftyFormLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value, animated: animated)
 			return
-		}
+        }
+        object.customizeCell(cell)
 	}
 	
 	
@@ -539,7 +553,7 @@ class PopulateTableView: FormItemVisitor {
 			return
 		}
 		
-		let cell = SwitchCell(model: model)
+        let cell = SwitchCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -552,7 +566,8 @@ class PopulateTableView: FormItemVisitor {
 			SwiftyFormLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value, animated: animated)
 			return
-		}
+        }
+        object.customizeCell(cell)
 	}
 	
 	
@@ -576,8 +591,8 @@ class PopulateTableView: FormItemVisitor {
 			weakObject?.textDidChange(value)
 			return
 		}
-		let cell = TextFieldFormItemCell(model: model)
-		cell.setValueWithoutSync(object.value)
+        let cell = TextFieldFormItemCell(model: model)
+        cell.setValueWithoutSync(object.value)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -606,7 +621,9 @@ class PopulateTableView: FormItemVisitor {
 				cell.titleWidthMode = TextFieldFormItemCell.TitleWidthMode.assign(width: width)
 				cell.setNeedsUpdateConstraints()
 			}
-		}
+        }
+        
+        object.customizeCell(cell)
 	}
 	
 	
@@ -623,8 +640,8 @@ class PopulateTableView: FormItemVisitor {
 			weakObject?.innerValue = value
 			return
 		}
-		let cell = TextViewCell(model: model)
-		cell.setValueWithoutSync(object.value)
+        let cell = TextViewCell(model: model)
+        cell.setValueWithoutSync(object.value)
 		cells.append(cell)
 		lastItemType = .item
 		
@@ -633,7 +650,8 @@ class PopulateTableView: FormItemVisitor {
 			SwiftyFormLog("sync value \(value)")
 			weakCell?.setValueWithoutSync(value)
 			return
-		}
+        }
+        object.customizeCell(cell)
 	}
 	
 	
@@ -652,8 +670,9 @@ class PopulateTableView: FormItemVisitor {
 					vc.navigationController?.pushViewController(childViewController, animated: true)
 				}
 			}
-		}
-		cells.append(cell)
+        }
+        cells.append(cell)
+        object.customizeCell(cell)
 		lastItemType = .item
 	}
 	
@@ -716,6 +735,9 @@ class PopulateTableView: FormItemVisitor {
 		model.valueDidChange = { (selectedRows: [Int]) in
 			SwiftyFormLog("value did change \(selectedRows)")
 			weakObject?.valueDidChange(selectedRows)
-		}
+        }
+        
+        object.customizeCell(cell)
+        object.customizeCell(cellExanded)
 	}
 }
