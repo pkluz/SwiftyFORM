@@ -738,6 +738,6 @@ class PopulateTableView: FormItemVisitor {
         }
         
         object.customizeCell(cell)
-        object.customizeCell(cellExanded)
+        object.customizeCell(cellExpanded)
 	}
 }
