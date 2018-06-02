@@ -26,9 +26,10 @@ public protocol FormItemVisitor {
 	func visit(object: ViewControllerFormItem)
 }
 
-open class FormItem {
+open class FormItem: NSObject {
 
-	public init() {
+	public override init() {
+		super.init()
 	}
 
 	func accept(visitor: FormItemVisitor) {}
