@@ -1,5 +1,15 @@
 ## 📄 Change Log
 
+### 1.6.0
+
+ * Upgraded from Xcode9.0 to Xcode9.2
+ * Upgraded from Swift3 to Swift4
+
+### 1.5.0
+
+ * Xcode9 preparations. Now compiles with Xcode9beta6.
+ * Swiftlint
+
 ### 1.4.0
 
  * Upgraded from Xcode8.2.1 to Xcode8.3.1

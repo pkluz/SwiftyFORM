@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2016 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2017 SwiftyFORM. All rights reserved.
 import UIKit
 import SwiftyFORM
 
@@ -11,7 +11,7 @@ class FirstViewController: FormViewController {
 		builder += ViewControllerFormItem().title("StaticText").viewController(Tutorial0_StaticText_ViewController.self)
 		builder += ViewControllerFormItem().title("TextField").viewController(Tutorial1_TextField_ViewController.self)
 		builder += ViewControllerFormItem().title("Child ViewController").viewController(Tutorial2_ChildViewController_ViewController.self)
-		
+
 		builder += SectionHeaderTitleFormItem().title("Usecases")
 		builder += ViewControllerFormItem().title("Sign Up").viewController(SignUpViewController.self)
 		builder += ViewControllerFormItem().title("Color Picker").viewController(ColorPickerViewController.self)
@@ -19,6 +19,7 @@ class FirstViewController: FormViewController {
 		builder += ViewControllerFormItem().title("Change Password").viewController(ChangePasswordViewController.self)
 		builder += ViewControllerFormItem().title("Report").viewController(ReportViewController.self)
 		builder += ViewControllerFormItem().title("Rate").viewController(RateAppViewController.self)
+		builder += ViewControllerFormItem().title("Storyboard Demo").viewController(StoryboardDemoViewController.self)
 		builder += ViewControllerFormItem().title("Area 51").storyboard("Area51", bundle: nil)
 
 		builder += SectionHeaderTitleFormItem().title("Non-SwiftyFORM")
@@ -29,7 +30,8 @@ class FirstViewController: FormViewController {
 		builder += ViewControllerFormItem().title("Valid & Invalid").viewController(TextFieldValidInvalidViewController.self)
 		builder += ViewControllerFormItem().title("Keyboard Types").viewController(TextFieldKeyboardTypesViewController.self)
 		builder += ViewControllerFormItem().title("Tab Through Form").viewController(TextFieldTabThroughFormViewController.self)
-		builder += ViewControllerFormItem().title("Return Key").viewController(TextFieldReturnKeyViewController.self)
+        builder += ViewControllerFormItem().title("Return Key").viewController(TextFieldReturnKeyViewController.self)
+        builder += ViewControllerFormItem().title("Editing End").viewController(TextFieldEditingEndViewController.self)
 
 		builder += SectionHeaderTitleFormItem().title("TextView")
 		builder += ViewControllerFormItem().title("TextViews").viewController(TextViewViewController.self)

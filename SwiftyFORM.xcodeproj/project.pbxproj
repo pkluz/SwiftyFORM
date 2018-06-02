@@ -100,7 +100,7 @@
 		428683671B346D0C0028DB2F /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428683621B346D0C0028DB2F /* ValidatorTests.swift */; };
 		42D0050E1B96241100986B3B /* CustomFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050D1B96241100986B3B /* CustomFormItem.swift */; };
 		42D005101B96243000986B3B /* WillDisplayCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */; };
-		42D005181B96348200986B3B /* NSBundle+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D005171B96348200986B3B /* NSBundle+LoadView.swift */; };
+		42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D005171B96348200986B3B /* Bundle+LoadView.swift */; };
 		42D297551D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297541D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift */; };
 		42D297571D49611300561780 /* PrecisionSlider_InnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297561D49611300561780 /* PrecisionSlider_InnerModel.swift */; };
 		42D297591D4BAEFB00561780 /* PrecisionSlider_InnerZoomMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D297581D4BAEFB00561780 /* PrecisionSlider_InnerZoomMode.swift */; };
@@ -217,7 +217,7 @@
 		428683621B346D0C0028DB2F /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		42D0050D1B96241100986B3B /* CustomFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFormItem.swift; sourceTree = "<group>"; };
 		42D0050F1B96243000986B3B /* WillDisplayCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillDisplayCellDelegate.swift; sourceTree = "<group>"; };
-		42D005171B96348200986B3B /* NSBundle+LoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+LoadView.swift"; sourceTree = "<group>"; };
+		42D005171B96348200986B3B /* Bundle+LoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadView.swift"; sourceTree = "<group>"; };
 		42D297541D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSlider_InnerCollectionViewCells.swift; sourceTree = "<group>"; };
 		42D297561D49611300561780 /* PrecisionSlider_InnerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSlider_InnerModel.swift; sourceTree = "<group>"; };
 		42D297581D4BAEFB00561780 /* PrecisionSlider_InnerZoomMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecisionSlider_InnerZoomMode.swift; sourceTree = "<group>"; };
@@ -366,6 +366,7 @@
 			children = (
 				4259A2C31C23759B00DB4CEB /* AccessoryButtonDelegate.swift */,
 				420F6CC81D69C17F009D5F57 /* AssignAppearance.swift */,
+				42D005171B96348200986B3B /* Bundle+LoadView.swift */,
 				42F7521D1D6917CD0014C6ED /* CellDeselector.swift */,
 				4212E0121D3A3ABE002287D0 /* CellForRowDelegate.swift */,
 				428683091B346CFE0028DB2F /* CellHeightProvider.swift */,
@@ -375,7 +376,6 @@
 				4286830C1B346CFE0028DB2F /* FormBuilder.swift */,
 				4286830F1B346CFE0028DB2F /* FormTableView.swift */,
 				4286830D1B346CFE0028DB2F /* FormViewController.swift */,
-				42D005171B96348200986B3B /* NSBundle+LoadView.swift */,
 				4286830B1B346CFE0028DB2F /* OptionListViewController.swift */,
 				428683131B346CFE0028DB2F /* PopulateTableView.swift */,
 				428683141B346CFE0028DB2F /* ReloadPersistentValidationStateVisitor.swift */,
@@ -496,17 +496,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Simon Strandgaard";
 				TargetAttributes = {
 					42D5DE641A38167400D5C368 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 					42D5DE6E1A38167400D5C368 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 22DR89XVRF;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -594,7 +594,7 @@
 				42D297551D49579E00561780 /* PrecisionSlider_InnerCollectionViewCells.swift in Sources */,
 				4219E1CB1DB827CF00B3204A /* Specification.swift in Sources */,
 				4219E1C51DB827CF00B3204A /* CharacterSetSpecification.swift in Sources */,
-				42D005181B96348200986B3B /* NSBundle+LoadView.swift in Sources */,
+				42D005181B96348200986B3B /* Bundle+LoadView.swift in Sources */,
 				420F6CC91D69C17F009D5F57 /* AssignAppearance.swift in Sources */,
 				42108D1F1B34E9F60067FEAA /* StepperFormItem.swift in Sources */,
 				428683401B346CFE0028DB2F /* FormViewController.swift in Sources */,
@@ -680,14 +680,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -729,14 +735,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -777,7 +789,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.SwiftyFORM;
 				PRODUCT_NAME = SwiftyFORM;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -799,7 +811,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.SwiftyFORM;
 				PRODUCT_NAME = SwiftyFORM;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -818,7 +830,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
 				PRODUCT_NAME = SwiftyFORMTests;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -830,7 +842,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = neoneye.swiftyFORMTests;
 				PRODUCT_NAME = SwiftyFORMTests;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

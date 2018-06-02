@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2016 SwiftyFORM. All rights reserved.
+// MIT license. Copyright (c) 2017 SwiftyFORM. All rights reserved.
 import UIKit
 
 public enum TableViewSectionPart {
@@ -6,7 +6,7 @@ public enum TableViewSectionPart {
 	case systemDefault
 	case titleString(string: String)
 	case titleView(view: UIView)
-	
+
 	var title: String? {
 		switch self {
 		case let .titleString(string):
@@ -15,7 +15,7 @@ public enum TableViewSectionPart {
 			return nil
 		}
 	}
-	
+
 	var view: UIView? {
 		switch self {
 		case let .titleView(view):
@@ -24,7 +24,7 @@ public enum TableViewSectionPart {
 			return nil
 		}
 	}
-	
+
 	var height: CGFloat {
 		switch self {
 		case .none:
@@ -37,7 +37,7 @@ public enum TableViewSectionPart {
 			return UITableViewAutomaticDimension
 		}
 	}
-	
+
 	var estimatedHeight: CGFloat {
 		switch self {
 		case .none:
@@ -79,7 +79,7 @@ public enum TableViewSectionPart {
 			The right solution would be to consider font size, screen size for determining the label height.
 			This may be overfitting the problem.
 			*/
-			if string.characters.count > 50 {
+			if string.utf8.count > 50 {
 				print("WARNING: Multiline section texts may cause crashes, consider instead using SectionHeaderViewFormItem")
 				return Constant.estimatedHeightForTitleSection * 2
 			}
